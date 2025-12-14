@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #020618;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.watch-outer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: #06080e;
+    min-width: 455px;
+    max-width: 600px;
+    padding: 0.1rem;
+    overflow: hidden;
+}
+
+.watch-outer::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    width: 450px;
+    height: 450px;
+    top: -50%;
+    left: -50%;
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: spinner 8s linear infinite;
+}
+
+.watch-outer.remove-before::after {
+    content: none;
+}
+
+.watch-outer::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform-origin: top left;
+    animation: spinner 8s linear infinite;
+}
+
+.watch-outer.remove-after::before {
+    content: none;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.watch-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    min-width: 455px;
+    max-width: 600px;
+    padding: 2rem 4rem;
+    background-color: #0F172B;
+    z-index: 10;
+}
+
+
+.watch-inner h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.35rem;
+    text-transform: capitalize;
+    color: white;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+h1 .icon {
+    font-weight: 800;
+    font-size: 40px;
+    color: #0a53be;
+}
+
+.time-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 10px 5px;
+}
+
+.time-wrapper .time-label {
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+    width: 90%;
+    padding: 0 2rem;
+    color: #fff;
+    text-align: left;
+}
+
+.buttons-wrapper {
+    display: flex;
+    column-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    width: 100px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-primary:hover {
+    background-color: #157347;
+    border-color: #146c43;
+}
+
+.btn-primary:active {
+    background-color: #146c43;
+    border-color: #13653f;
+}
+
+
+.btn-stop {
+    color: #fff;
+    background-color: #fd0d0d;
+    border-color: #fd0d0d;
+}
+
+.btn-stop:hover {
+    background-color: #d70b0b;
+    border-color: #ca0a0a;
+}
+
+.btn-stop:active {
+    background-color: #ca0a0a;
+    border-color: #be0a0a;
+}
+
+.btn-reset {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-reset:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-reset:active {
+    background-color: #0a58ca;
+    border-color: #0a53be;
+}
